@@ -10,16 +10,19 @@ import javax.security.auth.login.LoginException;
 @Log
 public class Main {
 
+    CommandManager commandManager = new CommandManager();
+    Listener listener = new Listener(commandManager);
+
     private Main() {
         try {
-            log.info("Booting...");
+            log.info("Booting");
             new JDABuilder(AccountType.BOT)
                     .setToken(Secrets.TOKEN)
                     .setAudioEnabled(false)
                     .setGame(Game.streaming("JDA", "https://www.twitch.tv/santamas"))
-                    .addEventListener(new Listener())
+                    .addEventListener(listener)
                     .build().awaitReady();
-            log.info("Running...");
+            log.info("Running");
         } catch (InterruptedException | LoginException e) {
             e.printStackTrace();
         }

@@ -1,13 +1,12 @@
 package com.KrupoderovMikhail.github;
 
+import com.KrupoderovMikhail.github.commands.HelpCommand;
 import com.KrupoderovMikhail.github.commands.PingCommand;
 import com.KrupoderovMikhail.github.objects.ICommand;
 import net.dv8tion.jda.core.events.message.guild.GuildMessageReceivedEvent;
+import org.jetbrains.annotations.NotNull;
 
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.regex.Pattern;
 
 public class CommandManager {
@@ -16,12 +15,21 @@ public class CommandManager {
 
     CommandManager() {
         addCommand(new PingCommand());
+        addCommand(new HelpCommand(this));
     }
 
     private void addCommand(ICommand command) {
         if (!commands.containsKey(command.getInvoke())) {
             commands.put(command.getInvoke(), command);
         }
+    }
+
+    public Collection<ICommand> getCommands() {
+        return commands.values();
+    }
+
+    public ICommand getCommand(@NotNull String name) {
+        return commands.get(name);
     }
 
     void handleCommand(GuildMessageReceivedEvent event) {

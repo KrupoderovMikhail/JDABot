@@ -11,8 +11,11 @@ import net.dv8tion.jda.core.hooks.ListenerAdapter;
 @Log
 class Listener extends ListenerAdapter {
 
-    private final CommandManager manager = new CommandManager();
+    private final CommandManager manager;
 
+    Listener(CommandManager manager) {
+        this.manager = manager;
+    }
     @Override
     public void onReady(ReadyEvent event) {
         log.info(String.format("Logged in as %#s\n", event.getJDA().getSelfUser()));
@@ -29,9 +32,9 @@ class Listener extends ListenerAdapter {
             Guild guild = event.getGuild();
             TextChannel textChannel = event.getTextChannel();
 
-            log.info(String.format("(%s)[%s]<%#s>: %s\n", guild.getName(), textChannel.getName(), author, content));
+            log.info(String.format("(%s)[%s]<%#s>: %s", guild.getName(), textChannel.getName(), author, content));
         } else if (event.isFromType(ChannelType.PRIVATE)) {
-            log.info(String.format("|PRIV|<%#s>: %s\n", author, content));
+            log.info(String.format("|PRIV|<%#s>: %s", author, content));
         }
     }
 
