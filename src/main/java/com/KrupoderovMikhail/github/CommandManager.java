@@ -1,6 +1,7 @@
 package com.KrupoderovMikhail.github;
 
 import com.KrupoderovMikhail.github.commands.CatCommand;
+import com.KrupoderovMikhail.github.commands.DogCommand;
 import com.KrupoderovMikhail.github.commands.HelpCommand;
 import com.KrupoderovMikhail.github.commands.PingCommand;
 import com.KrupoderovMikhail.github.objects.ICommand;
@@ -18,6 +19,7 @@ public class CommandManager {
         addCommand(new PingCommand());
         addCommand(new HelpCommand(this));
         addCommand(new CatCommand());
+        addCommand(new DogCommand());
     }
 
     private void addCommand(ICommand command) {

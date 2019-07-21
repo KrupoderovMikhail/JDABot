@@ -1,5 +1,6 @@
 package com.KrupoderovMikhail.github;
 
+import com.KrupoderovMikhail.github.secrets.Secrets;
 import lombok.extern.java.Log;
 import net.dv8tion.jda.core.AccountType;
 import net.dv8tion.jda.core.JDABuilder;

@@ -9,36 +9,34 @@ import org.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.io.IOException;
 import java.util.List;
 
-public class CatCommand implements ICommand {
+public class DogCommand implements ICommand {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(CatCommand.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(DogCommand.class);
 
     @Override
     public void handle(List<String> args, GuildMessageReceivedEvent event) {
-
         OkHttpClient http = new OkHttpClient();
-        Request request = new Request.Builder().url("https://aws.random.cat/meow").build();
+        Request request = new Request.Builder().url("https://dog.ceo/api/breeds/image/random").build();
 
         try {
             Response response = http.newCall(request).execute();
 
-            event.getChannel().sendMessage(new JSONObject(response.body().string()).get("file").toString()).queue();
-        } catch (IOException e) {
-            LOGGER.error("Cat API has either been updated or is down for maintenance.", e);
-            event.getChannel().sendMessage("Failed to make a request.");
+            event.getChannel().sendMessage(new JSONObject(response.body().string()).get("message").toString()).queue();
+        } catch (Exception e) {
+            LOGGER.error("Dog API has either been updated or is down for maintenance.", e);
+            event.getChannel().sendMessage("Failed to make a request.").queue();
         }
     }
 
     @Override
     public String getHelp() {
-        return "Shows you a random cat.";
+        return "Shows you a random dog";
     }
 
     @Override
     public String getInvoke() {
-        return "cat";
+        return "dog";
     }
 }
