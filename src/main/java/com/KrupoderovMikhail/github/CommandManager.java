@@ -1,5 +1,6 @@
 package com.KrupoderovMikhail.github;
 
+import com.KrupoderovMikhail.github.commands.CatCommand;
 import com.KrupoderovMikhail.github.commands.HelpCommand;
 import com.KrupoderovMikhail.github.commands.PingCommand;
 import com.KrupoderovMikhail.github.objects.ICommand;
@@ -16,6 +17,7 @@ public class CommandManager {
     CommandManager() {
         addCommand(new PingCommand());
         addCommand(new HelpCommand(this));
+        addCommand(new CatCommand());
     }
 
     private void addCommand(ICommand command) {
@@ -40,6 +42,7 @@ public class CommandManager {
         if (commands.containsKey(invoke)) {
             final List<String> args = Arrays.asList(split).subList(1, split.length);
 
+            event.getChannel().sendTyping().queue();
             commands.get(invoke).handle(args, event);
         }
     }

@@ -55,5 +55,6 @@ class Listener extends ListenerAdapter {
 
     private void shutdown(JDA jda) {
         jda.shutdown();
+        System.exit(0);
     }
 }
