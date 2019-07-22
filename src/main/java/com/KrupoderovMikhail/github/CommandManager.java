@@ -1,6 +1,7 @@
 package com.KrupoderovMikhail.github;
 
 import com.KrupoderovMikhail.github.commands.*;
+import com.KrupoderovMikhail.github.commands.admin.SetPrefixCommand;
 import com.KrupoderovMikhail.github.commands.fun.CatCommand;
 import com.KrupoderovMikhail.github.commands.fun.DogCommand;
 import com.KrupoderovMikhail.github.commands.fun.MemeCommand;
@@ -28,6 +29,7 @@ public class CommandManager {
         addCommand(new KickCommand());
         addCommand(new BanCommand());
         addCommand(new UnbanCommand());
+        addCommand(new SetPrefixCommand());
     }
 
     private void addCommand(ICommand command) {
@@ -45,8 +47,11 @@ public class CommandManager {
     }
 
     void handleCommand(GuildMessageReceivedEvent event) {
+        final String prefix = Constants.PREFIXES.get(event.getGuild().getIdLong());
+
         final String[] split = event.getMessage().getContentRaw().replaceFirst(
-                "(?i)" + Pattern.quote(Constants.PREFIX), "").split("\\s+");
+                "(?i)" + Pattern.quote(prefix), "").split("\\s+");
+
         final String invoke = split[0].toLowerCase();
 
         if (commands.containsKey(invoke)) {
