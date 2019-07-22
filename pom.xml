@@ -45,9 +45,9 @@
             <type>pom</type>
         </dependency>
     <dependency>
-        <groupId>com.github.duncte123</groupId>
+        <groupId>me.duncte123</groupId>
         <artifactId>botCommons</artifactId>
-        <version>fbb8f98</version>
+        <version>1.0.31</version>
     </dependency>
 </dependencies>
 
