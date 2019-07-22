@@ -1,6 +1,11 @@
 package com.KrupoderovMikhail.github;
 
 import com.KrupoderovMikhail.github.commands.*;
+import com.KrupoderovMikhail.github.commands.fun.CatCommand;
+import com.KrupoderovMikhail.github.commands.fun.DogCommand;
+import com.KrupoderovMikhail.github.commands.fun.MemeCommand;
+import com.KrupoderovMikhail.github.commands.fun.PingCommand;
+import com.KrupoderovMikhail.github.commands.moderation.KickCommand;
 import com.KrupoderovMikhail.github.objects.ICommand;
 import net.dv8tion.jda.core.events.message.guild.GuildMessageReceivedEvent;
 import org.jetbrains.annotations.NotNull;
@@ -18,6 +23,7 @@ public class CommandManager {
         addCommand(new CatCommand());
         addCommand(new DogCommand());
         addCommand(new MemeCommand());
+        addCommand(new KickCommand());
     }
 
     private void addCommand(ICommand command) {
