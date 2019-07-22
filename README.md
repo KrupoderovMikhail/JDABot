@@ -1,0 +1,2 @@
+# JDABot
+Discord bot
