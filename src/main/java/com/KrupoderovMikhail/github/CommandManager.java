@@ -7,6 +7,7 @@ import com.KrupoderovMikhail.github.commands.fun.MemeCommand;
 import com.KrupoderovMikhail.github.commands.fun.PingCommand;
 import com.KrupoderovMikhail.github.commands.moderation.BanCommand;
 import com.KrupoderovMikhail.github.commands.moderation.KickCommand;
+import com.KrupoderovMikhail.github.commands.moderation.UnbanCommand;
 import com.KrupoderovMikhail.github.objects.ICommand;
 import net.dv8tion.jda.core.events.message.guild.GuildMessageReceivedEvent;
 import org.jetbrains.annotations.NotNull;
@@ -26,6 +27,7 @@ public class CommandManager {
         addCommand(new MemeCommand());
         addCommand(new KickCommand());
         addCommand(new BanCommand());
+        addCommand(new UnbanCommand());
     }
 
     private void addCommand(ICommand command) {
