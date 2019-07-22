@@ -1,4 +1,4 @@
-package com.KrupoderovMikhail.github.commands;
+package com.KrupoderovMikhail.github.commands.fun;
 
 import com.KrupoderovMikhail.github.objects.ICommand;
 import net.dv8tion.jda.core.events.message.guild.GuildMessageReceivedEvent;
