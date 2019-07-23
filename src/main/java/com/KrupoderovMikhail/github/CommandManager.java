@@ -34,6 +34,7 @@ public class CommandManager {
         addCommand(new SetPrefixCommand());
 
         addCommand(new JoinCommand());
+        addCommand(new LeaveCommand());
     }
 
     private void addCommand(ICommand command) {
