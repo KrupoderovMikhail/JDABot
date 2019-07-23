@@ -12,6 +12,7 @@ import com.KrupoderovMikhail.github.commands.moderation.UnbanCommand;
 import com.KrupoderovMikhail.github.commands.music.JoinCommand;
 import com.KrupoderovMikhail.github.commands.music.LeaveCommand;
 import com.KrupoderovMikhail.github.commands.music.PlayCommand;
+import com.KrupoderovMikhail.github.commands.music.StopCommand;
 import com.KrupoderovMikhail.github.objects.ICommand;
 import net.dv8tion.jda.core.events.message.guild.GuildMessageReceivedEvent;
 import org.jetbrains.annotations.NotNull;
@@ -37,6 +38,7 @@ public class CommandManager {
         addCommand(new JoinCommand());
         addCommand(new LeaveCommand());
         addCommand(new PlayCommand());
+        addCommand(new StopCommand());
     }
 
     private void addCommand(ICommand command) {
