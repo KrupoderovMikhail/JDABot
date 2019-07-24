@@ -31,6 +31,7 @@ public class CommandManager {
         addCommand(new BanCommand());
         addCommand(new UnbanCommand());
         addCommand(new SetPrefixCommand());
+        addCommand(new UserInfoCommand());
 
         addCommand(new JoinCommand());
         addCommand(new LeaveCommand());
