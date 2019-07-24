@@ -24,8 +24,8 @@ public class PlayCommand implements ICommand {
 
         String input = String.join(" ", args);
 
-        if (!isURL(input) && input.startsWith("vtsearch:")) {
-            // Use the youtube api for search instead, making a lot of requests with "vtsearch:" will get you blocked
+        if (!isUrl(input) && !input.startsWith("ytsearch:")) {
+            // Use the youtube api for search instead, making a lot of requests with "ytsearch:" will get you blocked
             channel.sendMessage("Please provide a valid youtube, soundcloud or bandcamp link").queue();
 
             return;
@@ -38,7 +38,7 @@ public class PlayCommand implements ICommand {
         manager.getGuildMusicManager(event.getGuild()).player.setVolume(100);
     }
 
-    private boolean isURL(String input) {
+    private boolean isUrl(String input) {
         try {
             new URL(input);
             return true;
