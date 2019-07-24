@@ -38,6 +38,7 @@ public class CommandManager {
         addCommand(new StopCommand());
         addCommand(new QueueCommand());
         addCommand(new SkipCommand());
+        addCommand(new NowPlayingCommand());
     }
 
     private void addCommand(ICommand command) {
