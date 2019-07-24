@@ -25,8 +25,12 @@ public class SkipCommand implements ICommand {
             return;
         }
 
-        scheduler.nextTrack();
-        channel.sendMessage("Skipping the current track").queue();
+        try {
+            scheduler.nextTrack();
+            channel.sendMessage("Skipping the current track").queue();
+        } catch (IllegalStateException e) {
+            scheduler.nextTrack();
+        }
     }
 
     @Override
