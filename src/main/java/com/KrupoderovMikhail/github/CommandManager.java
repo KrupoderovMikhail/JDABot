@@ -13,6 +13,7 @@ import com.KrupoderovMikhail.github.commands.moderation.BanCommand;
 import com.KrupoderovMikhail.github.commands.moderation.KickCommand;
 import com.KrupoderovMikhail.github.commands.moderation.UnbanCommand;
 import com.KrupoderovMikhail.github.commands.music.*;
+import com.KrupoderovMikhail.github.commands.owner.EvalCommand;
 import com.KrupoderovMikhail.github.config.Config;
 import com.KrupoderovMikhail.github.objects.ICommand;
 import net.dv8tion.jda.core.events.message.guild.GuildMessageReceivedEvent;
@@ -55,6 +56,8 @@ public class CommandManager {
             addCommand(new QueueCommand());
             addCommand(new SkipCommand());
             addCommand(new NowPlayingCommand());
+
+            addCommand(new EvalCommand());
         }
     }
 

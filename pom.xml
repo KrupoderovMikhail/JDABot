@@ -57,6 +57,15 @@
             <artifactId>botCommons</artifactId>
             <version>1.0.31</version>
         </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.codehaus.groovy/groovy-all -->
+        <dependency>
+            <groupId>org.codehaus.groovy</groupId>
+            <artifactId>groovy-jsr223</artifactId>
+            <version>3.0.0-alpha-4</version>
+            <type>pom</type>
+        </dependency>
+
     </dependencies>
 
     <build>
