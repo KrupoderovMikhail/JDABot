@@ -4,9 +4,8 @@ import com.KrupoderovMikhail.github.commands.fun.CatCommand;
 import com.KrupoderovMikhail.github.config.Config;
 import me.duncte123.botcommons.messaging.EmbedUtils;
 import me.duncte123.botcommons.web.WebUtils;
-import net.dv8tion.jda.core.AccountType;
+import net.dv8tion.jda.bot.sharding.DefaultShardManagerBuilder;
 import net.dv8tion.jda.core.EmbedBuilder;
-import net.dv8tion.jda.core.JDABuilder;
 import net.dv8tion.jda.core.entities.Game;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -39,13 +38,14 @@ public class Main {
 
         try {
             LOGGER.info("Booting");
-            new JDABuilder(AccountType.BOT)
+            new DefaultShardManagerBuilder()
                     .setToken(config.getString("token"))
+                    .setShardsTotal(2)
                     .setGame(Game.listening("!help"))
-                    .addEventListener(listener)
-                    .build().awaitReady();
+                    .addEventListeners(listener)
+                    .build();
             LOGGER.info("Running");
-        } catch (InterruptedException | LoginException e) {
+        } catch (LoginException e) {
             e.printStackTrace();
         }
     }
