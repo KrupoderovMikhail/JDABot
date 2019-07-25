@@ -1,4 +1,4 @@
-package com.KrupoderovMikhail.github.commands;
+package com.KrupoderovMikhail.github.commands.core;
 
 import com.KrupoderovMikhail.github.Constants;
 import com.KrupoderovMikhail.github.objects.ICommand;

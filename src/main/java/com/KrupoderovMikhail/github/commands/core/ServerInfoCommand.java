@@ -1,4 +1,4 @@
-package com.KrupoderovMikhail.github.commands;
+package com.KrupoderovMikhail.github.commands.core;
 
 import com.KrupoderovMikhail.github.objects.ICommand;
 import me.duncte123.botcommons.messaging.EmbedUtils;

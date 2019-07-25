@@ -1,9 +1,10 @@
 package com.KrupoderovMikhail.github;
 
-import com.KrupoderovMikhail.github.commands.HelpCommand;
-import com.KrupoderovMikhail.github.commands.ServerInfoCommand;
-import com.KrupoderovMikhail.github.commands.UserInfoCommand;
 import com.KrupoderovMikhail.github.commands.admin.SetPrefixCommand;
+import com.KrupoderovMikhail.github.commands.core.HelpCommand;
+import com.KrupoderovMikhail.github.commands.core.ServerInfoCommand;
+import com.KrupoderovMikhail.github.commands.core.UptimeCommand;
+import com.KrupoderovMikhail.github.commands.core.UserInfoCommand;
 import com.KrupoderovMikhail.github.commands.fun.CatCommand;
 import com.KrupoderovMikhail.github.commands.fun.DogCommand;
 import com.KrupoderovMikhail.github.commands.fun.MemeCommand;
@@ -44,7 +45,9 @@ public class CommandManager {
             addCommand(new SetPrefixCommand());
             addCommand(new UserInfoCommand());
             addCommand(new ServerInfoCommand());
+            addCommand(new UptimeCommand());
 
+            // Music command
             addCommand(new JoinCommand());
             addCommand(new LeaveCommand());
             addCommand(new PlayCommand());
