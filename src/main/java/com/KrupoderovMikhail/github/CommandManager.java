@@ -11,6 +11,7 @@ import com.KrupoderovMikhail.github.commands.fun.MemeCommand;
 import com.KrupoderovMikhail.github.commands.fun.PingCommand;
 import com.KrupoderovMikhail.github.commands.moderation.BanCommand;
 import com.KrupoderovMikhail.github.commands.moderation.KickCommand;
+import com.KrupoderovMikhail.github.commands.moderation.PurgeCommand;
 import com.KrupoderovMikhail.github.commands.moderation.UnbanCommand;
 import com.KrupoderovMikhail.github.commands.music.*;
 import com.KrupoderovMikhail.github.commands.owner.EvalCommand;
@@ -47,6 +48,7 @@ public class CommandManager {
             addCommand(new UserInfoCommand());
             addCommand(new ServerInfoCommand());
             addCommand(new UptimeCommand());
+            addCommand(new PurgeCommand());
 
             // Music command
             addCommand(new JoinCommand());
