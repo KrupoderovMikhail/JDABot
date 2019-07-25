@@ -3,16 +3,13 @@ package com.KrupoderovMikhail.github.commands;
 import com.KrupoderovMikhail.github.CommandManager;
 import com.KrupoderovMikhail.github.Constants;
 import com.KrupoderovMikhail.github.objects.ICommand;
+import me.duncte123.botcommons.messaging.EmbedUtils;
 import net.dv8tion.jda.core.EmbedBuilder;
 import net.dv8tion.jda.core.events.message.guild.GuildMessageReceivedEvent;
 
-import java.awt.*;
 import java.util.List;
-import java.util.Random;
 
 public class HelpCommand implements ICommand {
-
-    private final Random random = new Random();
 
     private final CommandManager manager;
 
@@ -31,7 +28,7 @@ public class HelpCommand implements ICommand {
         ICommand command = manager.getCommand(joined);
 
         if (command == null) {
-            event.getChannel().sendMessage("This command `" + joined + "` does not exists\n" +
+            event.getChannel().sendMessage("The command `" + joined + "` does not exists\n" +
                     "Use: `" + Constants.PREFIX + getInvoke() + "` for a list of commands").queue();
             return;
         }
@@ -42,9 +39,8 @@ public class HelpCommand implements ICommand {
     }
 
     private void generateAndSendEmbed(GuildMessageReceivedEvent event) {
-        EmbedBuilder builder = new EmbedBuilder()
-                .setTitle("A list of all my commands:")
-                .setColor(getRandomColor());
+        EmbedBuilder builder = EmbedUtils.defaultEmbed()
+                .setTitle("A list of all my commands:");
 
         StringBuilder descriptionBuilder = builder.getDescriptionBuilder();
 
@@ -54,14 +50,6 @@ public class HelpCommand implements ICommand {
 
         //TODO: Make a permission check to see if the bot can send embeds if not, send plain text
         event.getChannel().sendMessage(builder.build()).queue();
-    }
-
-    private Color getRandomColor() {
-        float r = random.nextFloat();
-        float g = random.nextFloat();
-        float b = random.nextFloat();
-
-        return new Color(r, g, b);
     }
 
     @Override
