@@ -1,6 +1,8 @@
 package com.KrupoderovMikhail.github;
 
-import com.KrupoderovMikhail.github.commands.*;
+import com.KrupoderovMikhail.github.commands.HelpCommand;
+import com.KrupoderovMikhail.github.commands.ServerInfoCommand;
+import com.KrupoderovMikhail.github.commands.UserInfoCommand;
 import com.KrupoderovMikhail.github.commands.admin.SetPrefixCommand;
 import com.KrupoderovMikhail.github.commands.fun.CatCommand;
 import com.KrupoderovMikhail.github.commands.fun.DogCommand;
@@ -10,37 +12,47 @@ import com.KrupoderovMikhail.github.commands.moderation.BanCommand;
 import com.KrupoderovMikhail.github.commands.moderation.KickCommand;
 import com.KrupoderovMikhail.github.commands.moderation.UnbanCommand;
 import com.KrupoderovMikhail.github.commands.music.*;
+import com.KrupoderovMikhail.github.config.Config;
 import com.KrupoderovMikhail.github.objects.ICommand;
 import net.dv8tion.jda.core.events.message.guild.GuildMessageReceivedEvent;
 import org.jetbrains.annotations.NotNull;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.*;
 import java.util.regex.Pattern;
 
 public class CommandManager {
 
+    private static final Logger LOGGER = LoggerFactory.getLogger(CommandManager.class);
     private final Map<String, ICommand> commands = new HashMap<>();
 
-    CommandManager() {
-        addCommand(new PingCommand());
-        addCommand(new HelpCommand(this));
-        addCommand(new CatCommand());
-        addCommand(new DogCommand());
-        addCommand(new MemeCommand());
-        addCommand(new KickCommand());
-        addCommand(new BanCommand());
-        addCommand(new UnbanCommand());
-        addCommand(new SetPrefixCommand());
-        addCommand(new UserInfoCommand());
-        addCommand(new ServerInfoCommand());
 
-        addCommand(new JoinCommand());
-        addCommand(new LeaveCommand());
-        addCommand(new PlayCommand());
-        addCommand(new StopCommand());
-        addCommand(new QueueCommand());
-        addCommand(new SkipCommand());
-        addCommand(new NowPlayingCommand());
+    CommandManager() {
+
+        if (Config.getInstance().getBoolean("loadcommands")) {
+            LOGGER.info("Loading commands");
+
+            addCommand(new PingCommand());
+            addCommand(new HelpCommand(this));
+            addCommand(new CatCommand());
+            addCommand(new DogCommand());
+            addCommand(new MemeCommand());
+            addCommand(new KickCommand());
+            addCommand(new BanCommand());
+            addCommand(new UnbanCommand());
+            addCommand(new SetPrefixCommand());
+            addCommand(new UserInfoCommand());
+            addCommand(new ServerInfoCommand());
+
+            addCommand(new JoinCommand());
+            addCommand(new LeaveCommand());
+            addCommand(new PlayCommand());
+            addCommand(new StopCommand());
+            addCommand(new QueueCommand());
+            addCommand(new SkipCommand());
+            addCommand(new NowPlayingCommand());
+        }
     }
 
     private void addCommand(ICommand command) {

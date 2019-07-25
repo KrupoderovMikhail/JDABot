@@ -1,7 +1,7 @@
 package com.KrupoderovMikhail.github;
 
 import com.KrupoderovMikhail.github.commands.fun.CatCommand;
-import com.KrupoderovMikhail.github.secrets.Secrets;
+import com.KrupoderovMikhail.github.config.Config;
 import me.duncte123.botcommons.messaging.EmbedUtils;
 import me.duncte123.botcommons.web.WebUtils;
 import net.dv8tion.jda.core.AccountType;
@@ -13,6 +13,8 @@ import org.slf4j.LoggerFactory;
 
 import javax.security.auth.login.LoginException;
 import java.awt.*;
+import java.io.File;
+import java.io.IOException;
 import java.time.Instant;
 import java.util.Random;
 
@@ -21,8 +23,9 @@ public class Main {
     private final Random random = new Random();
     private static final Logger LOGGER = LoggerFactory.getLogger(CatCommand.class);
 
-    private Main() {
+    private Main() throws IOException {
 
+        Config config = new Config(new File("botconfig.json"));
         CommandManager commandManager = new CommandManager();
         Listener listener = new Listener(commandManager);
 
@@ -37,7 +40,7 @@ public class Main {
         try {
             LOGGER.info("Booting");
             new JDABuilder(AccountType.BOT)
-                    .setToken(Secrets.TOKEN)
+                    .setToken(config.getString("token"))
                     .setGame(Game.listening("!help"))
                     .addEventListener(listener)
                     .build().awaitReady();
@@ -55,7 +58,7 @@ public class Main {
         return new Color(r, g, b);
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         new Main();
     }
 }
