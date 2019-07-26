@@ -59,6 +59,7 @@ public class CommandManager {
             addCommand(new SkipCommand());
             addCommand(new NowPlayingCommand());
             addCommand(new VolumeCommand());
+            addCommand(new PauseCommand());
 
             addCommand(new EvalCommand());
         }
