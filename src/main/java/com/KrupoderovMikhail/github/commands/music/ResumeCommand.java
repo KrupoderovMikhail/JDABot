@@ -8,7 +8,7 @@ import net.dv8tion.jda.core.events.message.guild.GuildMessageReceivedEvent;
 
 import java.util.List;
 
-public class PauseCommand implements ICommand {
+public class ResumeCommand implements ICommand {
     @Override
     public void handle(List<String> args, GuildMessageReceivedEvent event) {
 
@@ -17,21 +17,21 @@ public class PauseCommand implements ICommand {
         GuildMusicManager musicManager = playerManager.getGuildMusicManager(event.getGuild());
 
         if (musicManager.player.getPlayingTrack() == null) {
-            channel.sendMessage("There is nothing playing.").queue();
+            channel.sendMessage("There is nothing playing").queue();
             return;
         }
 
-        musicManager.player.setPaused(true);
-        channel.sendMessage("Successfully paused " + musicManager.player.getPlayingTrack().getInfo().title).queue();
+        musicManager.player.setPaused(false);
+        channel.sendMessage("Successfully resumed " + musicManager.player.getPlayingTrack().getInfo().title).queue();
     }
 
     @Override
     public String getHelp() {
-        return "Pause the current song";
+        return "Resumes playing a previously paused song";
     }
 
     @Override
     public String getInvoke() {
-        return "pause";
+        return "resume";
     }
 }
