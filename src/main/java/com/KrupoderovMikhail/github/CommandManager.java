@@ -47,6 +47,7 @@ public class CommandManager {
             addCommand(new UptimeCommand());
             addCommand(new PurgeCommand());
             addCommand(new BunnyCommand());
+            addCommand(new RollCommand());
 
             // Music command
             addCommand(new JoinCommand());
