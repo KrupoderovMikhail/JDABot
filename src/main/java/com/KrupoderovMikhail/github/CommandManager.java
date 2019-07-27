@@ -5,10 +5,7 @@ import com.KrupoderovMikhail.github.commands.core.HelpCommand;
 import com.KrupoderovMikhail.github.commands.core.ServerInfoCommand;
 import com.KrupoderovMikhail.github.commands.core.UptimeCommand;
 import com.KrupoderovMikhail.github.commands.core.UserInfoCommand;
-import com.KrupoderovMikhail.github.commands.fun.CatCommand;
-import com.KrupoderovMikhail.github.commands.fun.DogCommand;
-import com.KrupoderovMikhail.github.commands.fun.MemeCommand;
-import com.KrupoderovMikhail.github.commands.fun.PingCommand;
+import com.KrupoderovMikhail.github.commands.fun.*;
 import com.KrupoderovMikhail.github.commands.moderation.BanCommand;
 import com.KrupoderovMikhail.github.commands.moderation.KickCommand;
 import com.KrupoderovMikhail.github.commands.moderation.PurgeCommand;
@@ -49,6 +46,7 @@ public class CommandManager {
             addCommand(new ServerInfoCommand());
             addCommand(new UptimeCommand());
             addCommand(new PurgeCommand());
+            addCommand(new BunnyCommand());
 
             // Music command
             addCommand(new JoinCommand());
