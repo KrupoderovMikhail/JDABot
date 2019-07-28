@@ -50,6 +50,7 @@ public class CommandManager {
             addCommand(new RollCommand());
             addCommand(new RandomCommand());
             addCommand(new FlipCommand());
+            addCommand(new ZalgoCommand());
 
             // Music command
             addCommand(new JoinCommand());

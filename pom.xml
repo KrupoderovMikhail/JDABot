@@ -58,6 +58,12 @@
             <version>1.0.31</version>
         </dependency>
 
+        <dependency>
+            <groupId>me.nsylke.zalgo4j</groupId>
+            <artifactId>zalgo4j</artifactId>
+            <version>1.0.1</version>
+        </dependency>
+
         <!-- https://mvnrepository.com/artifact/org.codehaus.groovy/groovy-all -->
         <dependency>
             <groupId>org.codehaus.groovy</groupId>
