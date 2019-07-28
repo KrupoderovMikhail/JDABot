@@ -51,6 +51,7 @@ public class CommandManager {
             addCommand(new RandomCommand());
             addCommand(new FlipCommand());
             addCommand(new ZalgoCommand());
+            addCommand(new ReverseCommand());
 
             // Music command
             addCommand(new JoinCommand());
