@@ -66,6 +66,7 @@ public class CommandManager {
             addCommand(new VolumeCommand());
             addCommand(new PauseCommand());
             addCommand(new ResumeCommand());
+            addCommand(new GachiMusicCommand());
 
             addCommand(new EvalCommand());
         }
