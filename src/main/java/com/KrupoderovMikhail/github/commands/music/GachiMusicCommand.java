@@ -19,7 +19,7 @@ public class GachiMusicCommand implements ICommand {
 
         manager.getGuildMusicManager(event.getGuild()).player.setVolume(100);
 
-        event.getChannel().sendMessage("You have a good taste in music, sir :wine_glass:\n" + "https://media1.tenor.com/images/c82f2cc34aee229a08a4f39e5e3776b3/tenor.gif?itemid=13328016").queue();
+        channel.sendMessage("You have a good taste in music, sir :wine_glass:\n" + "https://media1.tenor.com/images/c82f2cc34aee229a08a4f39e5e3776b3/tenor.gif?itemid=13328016").queue();
     }
 
     @Override
