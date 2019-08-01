@@ -1,6 +1,7 @@
 package com.KrupoderovMikhail.github;
 
 import com.KrupoderovMikhail.github.commands.UrbandictionaryCommand;
+import com.KrupoderovMikhail.github.commands.WikipediaCommand;
 import com.KrupoderovMikhail.github.commands.admin.SetPrefixCommand;
 import com.KrupoderovMikhail.github.commands.core.HelpCommand;
 import com.KrupoderovMikhail.github.commands.core.ServerInfoCommand;
@@ -57,6 +58,7 @@ public class CommandManager {
             addCommand(new FacesCommand());
 
             addCommand(new UrbandictionaryCommand());
+            addCommand(new WikipediaCommand());
 
             // Music command
             addCommand(new JoinCommand());
