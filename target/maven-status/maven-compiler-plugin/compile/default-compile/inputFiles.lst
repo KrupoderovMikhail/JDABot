@@ -12,6 +12,7 @@ C:\project\JDABot\src\main\java\com\KrupoderovMikhail\github\commands\fun\ZalgoC
 C:\project\JDABot\src\main\java\com\KrupoderovMikhail\github\commands\fun\PingCommand.java
 C:\project\JDABot\src\main\java\com\KrupoderovMikhail\github\commands\music\LeaveCommand.java
 C:\project\JDABot\src\main\java\com\KrupoderovMikhail\github\music\TrackScheduler.java
+C:\project\JDABot\src\main\java\com\KrupoderovMikhail\github\commands\StrawpollCommand.java
 C:\project\JDABot\src\main\java\com\KrupoderovMikhail\github\commands\fun\MemeCommand.java
 C:\project\JDABot\src\main\java\com\KrupoderovMikhail\github\commands\moderation\PurgeCommand.java
 C:\project\JDABot\src\main\java\com\KrupoderovMikhail\github\commands\core\HelpCommand.java
@@ -37,6 +38,7 @@ C:\project\JDABot\src\main\java\com\KrupoderovMikhail\github\commands\moderation
 C:\project\JDABot\src\main\java\com\KrupoderovMikhail\github\commands\WikipediaCommand.java
 C:\project\JDABot\src\main\java\com\KrupoderovMikhail\github\objects\ICommand.java
 C:\project\JDABot\src\main\java\com\KrupoderovMikhail\github\commands\core\UptimeCommand.java
+C:\project\JDABot\src\main\java\com\KrupoderovMikhail\github\commands\fun\ChooseCommand.java
 C:\project\JDABot\src\main\java\com\KrupoderovMikhail\github\music\PlayerManager.java
 C:\project\JDABot\src\main\java\com\KrupoderovMikhail\github\commands\fun\FlipCommand.java
 C:\project\JDABot\src\main\java\com\KrupoderovMikhail\github\commands\fun\RandomCommand.java
