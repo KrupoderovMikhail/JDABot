@@ -1,5 +1,6 @@
 package com.KrupoderovMikhail.github;
 
+import com.KrupoderovMikhail.github.commands.StrawpollCommand;
 import com.KrupoderovMikhail.github.commands.UrbandictionaryCommand;
 import com.KrupoderovMikhail.github.commands.WikipediaCommand;
 import com.KrupoderovMikhail.github.commands.admin.SetPrefixCommand;
@@ -59,6 +60,8 @@ public class CommandManager {
 
             addCommand(new UrbandictionaryCommand());
             addCommand(new WikipediaCommand());
+
+            addCommand(new StrawpollCommand());
 
             // Music command
             addCommand(new JoinCommand());
