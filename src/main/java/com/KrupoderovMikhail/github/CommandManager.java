@@ -55,6 +55,7 @@ public class CommandManager {
             addCommand(new ReverseCommand());
             addCommand(new QuoteCommand());
             addCommand(new FacesCommand());
+            addCommand(new ChooseCommand());
 
             addCommand(new UrbandictionaryCommand());
             addCommand(new WikipediaCommand());
