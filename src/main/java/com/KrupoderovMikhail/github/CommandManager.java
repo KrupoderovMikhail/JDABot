@@ -29,7 +29,6 @@ public class CommandManager {
     private static final Logger LOGGER = LoggerFactory.getLogger(CommandManager.class);
     private final Map<String, ICommand> commands = new HashMap<>();
 
-
     CommandManager() {
 
         if (Config.getInstance().getBoolean("loadcommands")) {

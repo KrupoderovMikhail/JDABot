@@ -10,6 +10,7 @@ import net.dv8tion.jda.core.events.message.guild.GuildMessageReceivedEvent;
 import java.util.List;
 
 public class BanCommand implements ICommand {
+
     @Override
     public void handle(List<String> args, GuildMessageReceivedEvent event) {
 
@@ -36,7 +37,7 @@ public class BanCommand implements ICommand {
             return;
         }
 
-        event.getGuild().getController().ban(target,1)
+        event.getGuild().getController().ban(target, 1)
                 .reason(String.format("Ban by: %#s, with reason: %s", event.getAuthor(), reason)).queue();
 
         channel.sendMessage("Success").queue();

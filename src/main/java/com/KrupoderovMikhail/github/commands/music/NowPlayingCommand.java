@@ -13,6 +13,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class NowPlayingCommand implements ICommand {
+
     @Override
     public void handle(List<String> args, GuildMessageReceivedEvent event) {
 

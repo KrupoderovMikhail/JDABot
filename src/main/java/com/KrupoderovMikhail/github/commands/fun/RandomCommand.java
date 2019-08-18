@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.Random;
 
 public class RandomCommand implements ICommand {
+
     @Override
     public void handle(List<String> args, GuildMessageReceivedEvent event) {
 

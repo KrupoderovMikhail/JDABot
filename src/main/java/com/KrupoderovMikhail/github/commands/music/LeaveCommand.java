@@ -9,6 +9,7 @@ import net.dv8tion.jda.core.managers.AudioManager;
 import java.util.List;
 
 public class LeaveCommand implements ICommand {
+
     @Override
     public void handle(List<String> args, GuildMessageReceivedEvent event) {
 

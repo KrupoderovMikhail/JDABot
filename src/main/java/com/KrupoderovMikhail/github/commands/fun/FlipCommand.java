@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class FlipCommand implements ICommand {
+
     @Override
     public void handle(List<String> args, GuildMessageReceivedEvent event) {
 

@@ -11,6 +11,7 @@ import java.net.URL;
 import java.util.List;
 
 public class PlayCommand implements ICommand {
+
     @Override
     public void handle(List<String> args, GuildMessageReceivedEvent event) {
 

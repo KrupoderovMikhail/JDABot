@@ -21,7 +21,6 @@ build/
 *.ipr
 *.json
 out/
-target
 
 ### NetBeans ###
 /nbproject/private/

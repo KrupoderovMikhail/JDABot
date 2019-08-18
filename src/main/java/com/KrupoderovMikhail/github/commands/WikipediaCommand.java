@@ -14,6 +14,7 @@ import java.io.IOException;
 import java.util.List;
 
 public class WikipediaCommand implements ICommand {
+
     @Override
     public void handle(List<String> args, GuildMessageReceivedEvent event) {
 

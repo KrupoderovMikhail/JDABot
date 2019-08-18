@@ -15,6 +15,7 @@ import java.util.List;
 import java.util.concurrent.BlockingQueue;
 
 public class QueueCommand implements ICommand {
+
     @Override
     public void handle(List<String> args, GuildMessageReceivedEvent event) {
 
@@ -31,7 +32,7 @@ public class QueueCommand implements ICommand {
         int trackCount = Math.min(queue.size(), 20);
         List<AudioTrack> tracks = new ArrayList<>(queue);
         EmbedBuilder builder = EmbedUtils.defaultEmbed()
-                .setTitle("Current Queue (TotalL " +  queue.size() + ")");
+                .setTitle("Current Queue (TotalL " + queue.size() + ")");
 
         for (int i = 0; i < trackCount; i++) {
             AudioTrack track = tracks.get(i);

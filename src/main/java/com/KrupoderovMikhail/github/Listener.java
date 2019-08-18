@@ -1,24 +1,26 @@
 package com.KrupoderovMikhail.github;
 
-import lombok.extern.java.Log;
 import net.dv8tion.jda.core.JDA;
 import net.dv8tion.jda.core.entities.*;
 import net.dv8tion.jda.core.events.ReadyEvent;
 import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.core.events.message.guild.GuildMessageReceivedEvent;
 import net.dv8tion.jda.core.hooks.ListenerAdapter;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
-@Log
 class Listener extends ListenerAdapter {
 
+    private static final Logger LOGGER = LoggerFactory.getLogger(Listener.class);
     private final CommandManager manager;
 
     Listener(CommandManager manager) {
         this.manager = manager;
     }
+
     @Override
     public void onReady(ReadyEvent event) {
-        log.info(String.format("Logged in as %#s\n", event.getJDA().getSelfUser()));
+        LOGGER.info(String.format("Logged in as %#s\n", event.getJDA().getSelfUser()));
     }
 
     @Override
@@ -32,9 +34,9 @@ class Listener extends ListenerAdapter {
             Guild guild = event.getGuild();
             TextChannel textChannel = event.getTextChannel();
 
-            log.info(String.format("(%s)[%s]<%#s>: %s", guild.getName(), textChannel.getName(), author, content));
+            LOGGER.info(String.format("(%s)[%s]<%#s>: %s", guild.getName(), textChannel.getName(), author, content));
         } else if (event.isFromType(ChannelType.PRIVATE)) {
-            log.info(String.format("|PRIV|<%#s>: %s", author, content));
+            LOGGER.info(String.format("|PRIV|<%#s>: %s", author, content));
         }
     }
 

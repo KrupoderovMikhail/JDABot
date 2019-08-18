@@ -11,6 +11,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 public class ServerInfoCommand implements ICommand {
+
     @Override
     public void handle(List<String> args, GuildMessageReceivedEvent event) {
 
@@ -33,13 +34,13 @@ public class ServerInfoCommand implements ICommand {
                 guild.getMemberCache().stream().filter((m) -> m.getUser().isBot()).count()
         );
 
-            EmbedBuilder embed = EmbedUtils.defaultEmbed()
-                    .setTitle("Server info for " + guild.getName())
-                    .setThumbnail(guild.getIconUrl())
-                    .addField("General Info", generalInfo, false)
-                    .addField("Role and Member Counts", memberInfo, false);
+        EmbedBuilder embed = EmbedUtils.defaultEmbed()
+                .setTitle("Server info for " + guild.getName())
+                .setThumbnail(guild.getIconUrl())
+                .addField("General Info", generalInfo, false)
+                .addField("Role and Member Counts", memberInfo, false);
 
-            event.getChannel().sendMessage(embed.build()).queue();
+        event.getChannel().sendMessage(embed.build()).queue();
     }
 
     @Override

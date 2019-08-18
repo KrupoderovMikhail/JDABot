@@ -8,6 +8,7 @@ import java.lang.management.RuntimeMXBean;
 import java.util.List;
 
 public class UptimeCommand implements ICommand {
+
     @Override
     public void handle(List<String> args, GuildMessageReceivedEvent event) {
 

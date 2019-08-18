@@ -24,7 +24,7 @@ public class HelpCommand implements ICommand {
             return;
         }
 
-        String joined = String .join("", args);
+        String joined = String.join("", args);
         ICommand command = manager.getCommand(joined);
 
         if (command == null) {
